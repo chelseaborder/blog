@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chelsea's Book Log (Blog)</title>
+    <title>Chelsea's Book Log</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -17,8 +17,8 @@
         header {
             background-color: #1f1f1f;
             color: #fff;
-            padding: 20px 0;
             text-align: center;
+            padding: 20px 0;
             border-bottom: 1px solid #333;
         }
 
@@ -46,112 +46,199 @@
             padding: 0;
         }
 
-        ul li {
-            background-color: #333;
+        .book-item {
             margin: 10px 0;
-            padding: 15px;
+            padding: 10px;
             border-radius: 5px;
+            background-color: #333;
+        }
+
+        .book-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .book-header img {
+            width: 50px;
+            height: 75px;
+            margin-right: 15px;
+            border-radius: 3px;
+            object-fit: cover;
+        }
+
+        .placeholder {
+            width: 50px;
+            height: 75px;
+            margin-right: 15px;
+            background-color: #555;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+            font-size: 20px;
+        }
+
+        .toggle-button {
+            background-color: #666;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
-        ul li:hover {
+        .toggle-button:hover {
+            background-color: #888;
+        }
+
+        .book-summary {
+            margin-top: 10px;
+            padding: 10px;
             background-color: #444;
-        }
-
-        ul li strong {
-            color: #e0e0e0;
-        }
-
-        p {
-            color: #b0b0b0;
-        }
-
-        a {
-            color: #bb86fc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+            border-radius: 5px;
+            color: #ddd;
+            display: none;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Chelsea's Book Log (Blog)</h1>
+        <h1>Chelsea's Book Log</h1>
     </header>
     <div class="container">
         <h2>2024</h2>
-        <ul>
-            <li><strong>16. SPQR: A History of Ancient Rome</strong> by Mary Beard.</li>
-            <li><strong>15. Paved Paradise: How Parking Explains the World</strong> by Henry Grabar.</li>
-            <li><strong>14. Daring Greatly: How the Courage to Be Vulnerable Transforms the Way We Live, Love, Parent, and Lead </strong> by Brené Brown.</li>
-            <li><strong>13. Madeleine: Our Daughter's Disappearance and the Continuing Search for Her</strong> by Kate McCann.</li>
-            <li><strong>12. Astor: The Rise and Fall of an American Fortune</strong> by Anderson Cooper.</li>
-            <li><strong>11. Shattered: Inside Hillary Clinton's Doomed Campaign</strong> by Jonathan Allen and Amie Parnes.</li>
-            <li><strong>10. The Art of Power: My Story as America's First Woman Speaker of the House</strong> by Nancy Pelosi.</li>
-            <li><strong>9. Fire & Blood</strong> by George R. R. Martin.</li>
-            <li><strong>8. Hillbilly Elegy: A Memoir of a Family and Culture in Crisis</strong> by J. D. Vance.</li>
-            <li><strong>7. Thomas Jefferson & Sally Hemmings: An American Controversy</strong> by Annette Gordon-Reed.</li>
-            <li><strong>6. Elon Musk</strong> by Walter Isaacson.</li>
-            <li><strong>5. Burn Book: A Tech Love Story</strong> by Kara Swisher.</li>
-            <li><strong>4. The World for Sale: Money, Power, and the Traders Who Barter the Earth's Resources</strong> by Javier Blas and Jack Farchy.</li>
-            <li><strong>3. Never Finished</strong> by David Goggins.</li>
-            <li><strong>2. Can't Hurt Me: Master Your Mind and Defy the Odds</strong> by David Goggins.</li>
-            <li><strong>1. The Four Agreements</strong> by Don Miguel Ruiz.</li>
-        </ul>
-
+        <ul id="book-list-2024"></ul>
         <h2>2023</h2>
-        <ul>
-            <li><strong>17. Breaking History: A White House Memoir</strong> by Jared Kushner.</li>
-            <li><strong>16. The Woman in Me</strong> by Britney Spears.</li>
-            <li><strong>15. The 21 Irrefutable Laws of Leadership</strong> by John C. Maxwell.</li>
-            <li><strong>14. Outlive: The Science & Art of Longevity</strong> by Peter Attia.</li>
-            <li><strong>13. Born to Run: A Hidden Tribe, Superathletes, and the Greatest Race the World Has Never Seen</strong> by Christoper McDougall.</li>
-            <li><strong>12. The Hard Thing about Hard Things: Building a Business When There Are No Easy Answers</strong> by Ben Horowitz.</li>
-            <li><strong>11. Don't Trust Your Gut</strong> by Seth Stephens-Davidowitz.</li>
-            <li><strong>10. Why We Sleep</strong> by Matthew Walker.</li>
-            <li><strong>9. The Upside of Stress</strong> by Kelly McGonigal.</li>
-            <li><strong>8. The Obstacle is the Way</strong> by Ryan Holiday.</li>
-            <li><strong>7. Algorithms to Live By</strong> by Brian Christian and Tom Griffiths.</li>
-            <li><strong>6. Becoming Trader Joe: How I Did Business My Way and Still Beat the Big Guys</strong> by Joe Coulombe and Patty Civalleri.</li>
-            <li><strong>5. The Champion's Mind: How Great Athletes Think, Train, and Thrive</strong> by Jim Afremow.</li>
-            <li><strong>4. The Challenger Sale: Taking Control of the Customer Conversation</strong> by Matthew Dixon and Brent Adamson.</li>
-            <li><strong>3. Spare</strong> by Prince Harry.</li>
-            <li><strong>2. Play Bigger: How Pirates, Dreamers, and Innovators Create and Dominate Markets</strong>.</li>
-            <li><strong>1. Atomic Habits</strong> by James Clear.</li>
-        </ul>
-
+        <ul id="book-list-2023"></ul>
         <h2>2022</h2>
-        <ul>
-            <li><strong>11. Snowcrash</strong> by Neal Stephenson.</li>
-            <li><strong>10. The Alchemist</strong> by Paulo Coelho.</li>
-            <li><strong>9. The Defining Decade: Why Your Twenties Matter--And How to Make the Most of Them Now</strong> by Meg Jay.</li>
-            <li><strong>8. Exhalations: Stories</strong> by Ted Chiang.</li>
-            <li><strong>7. Meditations</strong> by Marcus Aurelius.</li>
-            <li><strong>6. Letters from a Stoic</strong> by Seneca.</li>
-            <li><strong>5. Empire Express: Building the First Transcontinental Railroad</strong> by David Haward Bain.</li>
-            <li><strong>4. The Art of Living</strong> by Epictetus.</li>
-            <li><strong>3. Zero to One</strong> by Peter Thiel and Blake Masters.</li>
-            <li><strong>2. Amp It Up: Leading for Hypergrowth by Raising Expectations, Increasing Urgency, and Elevating Intensity</strong> by Frank Slootman.</li>
-            <li><strong>1. Billion Dollar Brand Club</strong> by Lawrence Ingrassia.</li>
-        </ul>
-
+        <ul id="book-list-2022"></ul>
         <h2>2021</h2>
-        <ul>
-            <li><strong>6. Rebecca</strong> by Daphne du Maurier.</li>
-            <li><strong>5.Animal Farm</strong> by George Orwell.</li>
-            <li><strong>4. Steve Jobs</strong> by Walter Isaacson.</li>
-            <li><strong>3. The Time Machine</strong> by H.G. Wells.</li>
-            <li><strong>2. The Early Writings of Alan Watts</strong> by John Snelling.</li>
-            <li><strong>1. The Art of Thinking Clearly</strong> by Rolf Dobelli.</li>
-        </ul>
-
-        <h2>About Me</h2>
-        <p>I'm Chelsea. I'm a cofounder of AirGarage, a commercial real estate company. I'm a designer, engineer, and Forbes 30 under 30* recipient (*not incarcerated).</p>
-        <p>I also invest in early stage startups - notable ones include Interval (acquired) and Cuffed. You can reach me at <a href="mailto:im@chelseaborder.com">im@chelseaborder.com</a>.</p>
-        <p>When I'm not reading or working, I love to run, cook, kayak, and spend time with friends and family.</p>
-        <p>My favorite genres are self-development, history, and biographies. Open to recommendations!</p>
+        <ul id="book-list-2021"></ul>
     </div>
+
+    <script>
+        const bookLists = {
+            2024: [
+                { title: "SPQR: A History of Ancient Rome", author: "Mary Beard" },
+                { title: "Paved Paradise: How Parking Explains the World", author: "Henry Grabar" },
+                { title: "Daring Greatly", author: "Brené Brown" },
+                { title: "Madeleine: Our Daughter's Disappearance", author: "Kate McCann" },
+                { title: "Astor: The Rise and Fall of an American Fortune", author: "Anderson Cooper" },
+                { title: "Shattered", author: "Jonathan Allen" },
+                { title: "The Art of Power", author: "Nancy Pelosi" },
+                { title: "Fire & Blood", author: "George R. R. Martin" },
+                { title: "Hillbilly Elegy", author: "J. D. Vance" },
+                { title: "Thomas Jefferson & Sally Hemings", author: "Annette Gordon-Reed" },
+                { title: "Elon Musk", author: "Walter Isaacson" },
+                { title: "Burn Book", author: "Kara Swisher" },
+                { title: "The World for Sale", author: "Javier Blas" },
+                { title: "Never Finished", author: "David Goggins" },
+                { title: "Can't Hurt Me", author: "David Goggins" },
+                { title: "The Four Agreements", author: "Don Miguel Ruiz" },
+            ],
+            2023: [
+                { title: "Breaking History", author: "Jared Kushner" },
+                { title: "The Woman in Me", author: "Britney Spears" },
+                { title: "The 21 Irrefutable Laws of Leadership", author: "John C. Maxwell" },
+                { title: "Outlive", author: "Peter Attia" },
+                { title: "Born to Run", author: "Christopher McDougall" },
+                { title: "The Hard Thing About Hard Things", author: "Ben Horowitz" },
+                { title: "Don't Trust Your Gut", author: "Seth Stephens-Davidowitz" },
+                { title: "Why We Sleep", author: "Matthew Walker" },
+                { title: "The Upside of Stress: Why Stress Is Good for You, and How to Get Good at It", author: "Kelly McGonigal" },
+                { title: "The Obstacle Is the Way", author: "Ryan Holiday" },
+                { title: "Algorithms to Live By", author: "Brian Christian" },
+                { title: "Becoming Trader Joe", author: "Joe Coulombe" },
+                { title: "The Champion's Mind", author: "Jim Afremow" },
+                { title: "The Challenger Sale", author: "Matthew Dixon" },
+                { title: "Spare", author: "Prince Harry" },
+                { title: "Atomic Habits", author: "James Clear" },
+            ],
+            2022: [
+                { title: "Snow Crash", author: "Neal Stephenson" },
+                { title: "The Alchemist", author: "Paulo Coelho" },
+                { title: "The Defining Decade", author: "Meg Jay" },
+                { title: "Exhalation", author: "Ted Chiang" },
+                { title: "Meditations", author: "Marcus Aurelius" },
+                { title: "Letters from a Stoic", author: "Seneca" },
+                { title: "Empire Express", author: "David Haward Bain" },
+                { title: "The Art of Living", author: "Epictetus" },
+                { title: "Zero to One", author: "Peter Thiel" },
+                { title: "Amp It Up", author: "Frank Slootman" },
+                { title: "Billion Dollar Brand Club", author: "Lawrence Ingrassia" },
+            ],
+            2021: [
+                { title: "Rebecca", author: "Daphne du Maurier" },
+                { title: "Animal Farm", author: "George Orwell" },
+                { title: "Steve Jobs", author: "Walter Isaacson" },
+                { title: "The Time Machine", author: "H.G. Wells" },
+                { title: "The Early Writings of Alan Watts", author: "John Snelling" },
+                { title: "The Art of Thinking Clearly", author: "Rolf Dobelli" },
+            ],
+        };
+
+        const loadBooks = async (year) => {
+            const books = bookLists[year];
+            const listElement = document.getElementById(`book-list-${year}`);
+
+            const bookPromises = books.map(async (book) => {
+                const query = `intitle:${encodeURIComponent(book.title)}+inauthor:${encodeURIComponent(book.author)}`;
+                const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyDK4W7uc8i6Yq1yXpHTMH8GZhuTGmiupDg`;
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    console.log(data)
+                    const volumeInfo = data.items && data.items[0]?.volumeInfo;
+
+                    const thumbnail = volumeInfo?.imageLinks?.thumbnail || '';
+                    const description = volumeInfo?.description || "No summary available.";
+
+                    return `
+                        <li class="book-item">
+                            <div class="book-header">
+                                <img src="${thumbnail}" alt="${book.title} Book Cover">
+                                <div>
+                                    <strong>${book.title}</strong> - ${book.author}
+                                </div>
+                                <button class="toggle-button" onclick="toggleSummary(this)">Show</button>
+                            </div>
+                            <div class="book-summary">
+                                <p>${description}</p>
+                            </div>
+                        </li>`;
+                } catch (error) {
+                    console.error('Error fetching book data:', error);
+                    return `
+                        <li class="book-item">
+                            <div class="book-header">
+                                <div class="placeholder">📚</div>
+                                <div>
+                                    <strong>${book.title}</strong> - ${book.author}
+                                </div>
+                                <button class="toggle-button" onclick="toggleSummary(this)">Show</button>
+                            </div>
+                            <div class="book-summary">
+                                <p>No summary available.</p>
+                            </div>
+                        </li>`;
+                }
+            });
+
+            const bookItems = await Promise.all(bookPromises);
+            listElement.innerHTML = bookItems.join('');
+        };
+
+        const toggleSummary = (button) => {
+            const summary = button.parentElement.nextElementSibling;
+            const isVisible = summary.style.display === "block";
+            summary.style.display = isVisible ? "none" : "block";
+            button.textContent = isVisible ? "Show" : "Hide";
+        };
+
+        Object.keys(bookLists).forEach(loadBooks);
+    </script>
 </body>
 </html>
