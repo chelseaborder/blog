@@ -30,19 +30,19 @@
         "image_link": "http://books.google.com/books/content?id=bzCsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
-        "title": "Shattered",
+        "title": "Shattered: Inside Hillary Clinton's Doomed Campaign",
         "author": "Jonathan Allen",
         "year": 2024,
-        "image_link": "http://books.google.com/books/content?id=2RoXIvtZOpQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        "image_link": "http://books.google.com/books/content?id=DOFTDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
-        "title": "The Art of Power",
+        "title": "The Art of Power: My Story as America's First Woman Speaker of the House",
         "author": "Nancy Pelosi",
         "year": 2024,
-        "image_link": "http://books.google.com/books/content?id=Bub4j4V7FysC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        "image_link": "http://books.google.com/books/content?id=tcECEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
-        "title": "Fire & Blood",
+        "title": "Fire & Blood: 300 Years Before A Game of Thrones",
         "author": "George R. R. Martin",
         "year": 2024,
         "image_link": "http://books.google.com/books/content?id=vwPFDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
@@ -54,10 +54,10 @@
         "image_link": "http://books.google.com/books/content?id=7Y9KDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
-        "title": "Thomas Jefferson & Sally Hemings",
+        "title": "Thomas Jefferson and Sally Hemings: An American Controversy",
         "author": "Annette Gordon-Reed",
         "year": 2024,
-        "image_link": "http://books.google.com/books/content?id=iOHNKGJGo94C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        "image_link": "http://books.google.com/books/content?id=hk86gGtn8sUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
         "title": "Elon Musk",
@@ -234,10 +234,10 @@
         "image_link": "http://books.google.com/books/content?id=NSHyM2rCFM0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
-        "title": "The Art of Living",
+        "title": "Art of Living: The Classical Manual on Virtue, Happiness, and Effectiveness",
         "author": "Epictetus",
         "year": 2022,
-        "image_link": "http://books.google.com/books/content?id=WTzOPgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        "image_link": "http://books.google.com/books/content?id=eLqflnaUMYAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
     },
     {
         "title": "Zero to One",
@@ -274,7 +274,7 @@
         "author": "Walter Isaacson",
         "year": 2021,
         "image_link": "http://books.google.com/books/content?id=XUf-KtNv8IgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-    },
+    }
     {
         "title": "The Time Machine",
         "author": "H.G. Wells",
