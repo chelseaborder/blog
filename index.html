@@ -82,17 +82,71 @@
             font-size: 16px;
             margin: 20px 0;
         }
+
+        .button-container {
+            text-align: right;
+            margin: 20px 10px;
+           
+        }
+
+        .button {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Chelsea's Book Log</h1>
     </header>
+
+
+
     <div class="container" id="book-container">
+        <div class="button-container">
+          <button class="button" onclick="showSection('about-section')">About</button>
+        </div>
         <div id="loading-indicator" class="loading">Loading books...</div>
     </div>
 
+    <div class="container hidden" id="about-section">
+          <div class="button-container">
+            <button class="button" onclick="showSection('book-container')">Back to Log</button>
+          </div>
+       <h2>About</h2>
+        <p>Hello! I'm Chelsea. I'm a cofounder of AirGarage, a commercial real estate management company. I'm a designer, engineer, and Forbes 30 under 30 recipient.
+        
+        
+<br><br>The purpose of this site is to share my reading history. It's my book log (or blog, if you will). I'm not a fan of GoodReads :P so I made my own!
+
+<br><br>Outside of reading, I also invest in early stage startups - notable ones include <a href="https://interval.com/">Interval</a>(acquired) and <a href="https://www.cuffed.dating/">Cuffed</a>. You can reach me at im@chelseaborder.com.
+
+<br><br>When I'm not reading or working, I love to run, cook, kayak, and spend time with friends and family.
+
+<br><br>My favorite genres are self-development, history, and biographies. Always open to recommendations :)</p>
+    </div>
+
     <script>
+        const showSection = (sectionId) => {
+            document.getElementById('book-container').classList.add('hidden');
+            document.getElementById('about-section').classList.add('hidden');
+            document.getElementById(sectionId).classList.remove('hidden');
+        };
+
         const loadBooks = async () => {
             const loadingIndicator = document.getElementById('loading-indicator');
             const container = document.getElementById('book-container');
