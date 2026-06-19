@@ -3,197 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chelsea's Book Log</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Chelsea Border</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         body {
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
             background-color: #121212;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 44px 44px;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
-        }
-
-        header {
-            background-color: #1f1f1f;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #333;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #1f1f1f;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        h2 {
-            color: #adb0ab;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .book-item {
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #333;
-            display: flex;
-            align-items: center;
-        }
-
-        .book-item img {
-            width: 50px;
-            height: 75px;
-            margin-right: 15px;
-            border-radius: 3px;
-            object-fit: cover;
-        }
-
-        .placeholder {
-            width: 50px;
-            height: 75px;
-            margin-right: 15px;
-            background-color: #555;
-            color: #fff;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 3px;
-            font-size: 20px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .loading {
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: 0.18;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .orb-1 {
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, #4f6df5, transparent 70%);
+            top: -160px;
+            left: -120px;
+            animation: drift1 26s ease-in-out infinite alternate;
+        }
+
+        .orb-2 {
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, #2dd4bf, transparent 70%);
+            bottom: -180px;
+            right: -100px;
+            animation: drift2 32s ease-in-out infinite alternate;
+        }
+
+        @keyframes drift1 {
+            from { transform: translate(0, 0) scale(1); }
+            to   { transform: translate(120px, 80px) scale(1.15); }
+        }
+
+        @keyframes drift2 {
+            from { transform: translate(0, 0) scale(1.1); }
+            to   { transform: translate(-100px, -90px) scale(0.95); }
+        }
+
+        .grid-pulse {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-size: 44px 44px;
+            mix-blend-mode: screen;
+            -webkit-mask-size: 280% 280%;
+            mask-size: 280% 280%;
+        }
+
+        .grid-pulse-1 {
+            background-image:
+                linear-gradient(to right, rgba(45, 212, 191, 0.6) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(45, 212, 191, 0.6) 1px, transparent 1px);
+            -webkit-mask-image: linear-gradient(135deg, transparent 40%, #000 50%, transparent 60%);
+            mask-image: linear-gradient(135deg, transparent 40%, #000 50%, transparent 60%);
+            animation: sweep1 11s linear infinite;
+        }
+
+        .grid-pulse-2 {
+            background-image:
+                linear-gradient(to right, rgba(79, 109, 245, 0.55) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(192, 97, 245, 0.55) 1px, transparent 1px);
+            -webkit-mask-image: linear-gradient(45deg, transparent 42%, #000 50%, transparent 58%);
+            mask-image: linear-gradient(45deg, transparent 42%, #000 50%, transparent 58%);
+            animation: sweep2 15s linear infinite;
+        }
+
+        @keyframes sweep1 {
+            0%   { -webkit-mask-position: 0% 0%;     mask-position: 0% 0%; }
+            100% { -webkit-mask-position: 100% 100%; mask-position: 100% 100%; }
+        }
+
+        @keyframes sweep2 {
+            0%   { -webkit-mask-position: 100% 0%;   mask-position: 100% 0%; }
+            100% { -webkit-mask-position: 0% 100%;   mask-position: 0% 100%; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .orb { animation: none; }
+            .grid-pulse { animation: none; }
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 24px;
+            padding: 40px 44px;
             text-align: center;
-            color: #bbb;
-            font-size: 16px;
-            margin: 20px 0;
+            background-color: rgba(12, 12, 12, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
 
-        .button-container {
-            text-align: right;
-            margin: 20px 10px;
-           
-        }
-
-        .button {
-            font-family: 'DM Sans', sans-serif;
-            background-color: #333;
+        h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin: 0 0 16px;
             color: #fff;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 10px;
+            text-align: left;
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #c8c8c8;
+            margin: 0 0 20px;
+            text-align: left;
+        }
+
+        p:last-of-type {
+            margin-bottom: 32px;
+        }
+
+        .title-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .title-row h1 {
+            margin: 0;
+        }
+
+        .links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1f1f1f;
+            border: 1px solid #333;
             border-radius: 5px;
-            cursor: pointer;
+            transition: background-color 0.2s ease;
         }
 
-        .button:hover {
-            background-color: #555;
+        .links a i {
+            font-size: 1.2em;
         }
 
-        .hidden {
-            display: none;
+        .links a:hover {
+            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Chelsea's Book Log</h1>
-    </header>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
 
+    <div class="grid-pulse grid-pulse-1" aria-hidden="true"></div>
+    <div class="grid-pulse grid-pulse-2" aria-hidden="true"></div>
 
-
-    <div class="container" id="book-container">
-        <div class="button-container">
-          <button class="button" onclick="showSection('about-section')">About</button>
+    <main>
+        <div class="title-row">
+            <h1>Chelsea Border</h1>
+            <div class="links">
+                <a href="https://github.com/chelseaborder" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                <a href="https://www.linkedin.com/in/chelseaborder" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            </div>
         </div>
-        <div id="loading-indicator" class="loading">Loading books...</div>
-    </div>
-
-    <div class="container hidden" id="about-section">
-          <div class="button-container">
-            <button class="button" onclick="showSection('book-container')">Back to Log</button>
-          </div>
-       <h2>About</h2>
-        <p>Hello! I'm Chelsea. I'm a cofounder of AirGarage, a commercial real estate management company. I'm a designer, engineer, and Forbes 30 under 30 recipient.
-        
-        
-<br><br>The purpose of this site is to share my reading history. It's my book log (or blog, if you will). I'm not a fan of GoodReads :P so I made my own!
-
-<br><br>Outside of reading, I also invest in early stage startups - notable ones include <a href="https://interval.com/">Interval</a>(acquired) and <a href="https://www.cuffed.dating/">Cuffed</a>. You can reach me at im@chelseaborder.com.
-
-<br><br>When I'm not reading or working, I love to run, cook, kayak, and spend time with friends and family.
-
-<br><br>My favorite genres are self-development, history, and biographies. Always open to recommendations :)</p>
-    </div>
-
-    <script>
-        const showSection = (sectionId) => {
-            document.getElementById('book-container').classList.add('hidden');
-            document.getElementById('about-section').classList.add('hidden');
-            document.getElementById(sectionId).classList.remove('hidden');
-        };
-
-        const loadBooks = async () => {
-            const loadingIndicator = document.getElementById('loading-indicator');
-            const container = document.getElementById('book-container');
-
-            try {
-                // Fetch the JSON file with book data
-                const response = await fetch('book_image_links.json'); 
-                const books = await response.json();
-
-                // Group books by year
-                const booksByYear = books.reduce((acc, book) => {
-                    if (!acc[book.year]) acc[book.year] = [];
-                    acc[book.year].push(book);
-                    return acc;
-                }, {});
-
-                // Remove the loading indicator once data is fetched
-                loadingIndicator.style.display = 'none';
-
-                // Generate HTML for each year and its books
-                Object.keys(booksByYear).sort((a, b) => b - a).forEach(year => {
-                    const yearSection = document.createElement('div');
-                    yearSection.innerHTML = `
-                        <h2>${year}</h2>
-                        <ul>
-                            ${booksByYear[year]
-                                .map(book => `
-                                    <li class="book-item">
-                                        <img src="${book.image_link}" alt="${book.title} Cover" onerror="this.src='https://via.placeholder.com/50x75';">
-                                        <div>
-                                            <strong>${book.title}</strong> - ${book.author}
-                                        </div>
-                                    </li>
-                                `).join('')}
-                        </ul>
-                    `;
-                    container.appendChild(yearSection);
-                });
-            } catch (error) {
-                // Handle errors and display an error message
-                console.error('Error loading books:', error);
-                loadingIndicator.innerHTML = 'Failed to load books. Please try again later.';
-            }
-        };
-
-        // Load the books when the page is loaded
-        window.onload = loadBooks;
-    </script>
+        <p>I'm currently building AirGarage. My focus spans data analytics and product + brand design, digging into the numbers to understand what's driving results, then shaping the automations, products, and experiences that move them.</p>
+        <p>I love the full stack, from mockups to development of APIs, pipelines, and frontends, bringing complete ideas to life as a design engineer. I mainly build with Django, React, Snowflake, and Claude.</p>
+    </main>
 </body>
 </html>
